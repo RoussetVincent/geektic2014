@@ -39,8 +39,8 @@ public class GeekDaoTest extends BaseDaoTest {
  
     @Test
     public void testFindById() {
-    	Geek geek = geekDao.findById((long)2);
-    	assertTrue(geek.getId() == (long)2);
+    	Geek geek = geekDao.findById(2L);
+    	assertTrue(geek.getId() == 2L);
     }
 
     @Test
