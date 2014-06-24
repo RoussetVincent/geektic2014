@@ -1,0 +1,63 @@
+<div class="col-md-10">
+	<div class="row">
+		<div class="back-grey-1">
+			<h3> Liste de tous les geek : </h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="back-grey-1">
+			<h3> Filtrer par : </h3>
+		</div>		
+	</div>
+	<form>
+		<div class="row form-group">
+			<div class="col-md-4">
+				<div class="input-group">
+					<span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+					<input type="text" ng-model="filter_geek.name" placeholder="Nom" class="form-control" /> 
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="input-group">
+					<span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>	
+					<input type="text" ng-model="filter_geek.sex" placeholder="Sexe" class="form-control" /> 
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="input-group">
+					<span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+					<input type="text" ng-model="filter_geek.interests" placeholder="Interet" class="form-control" />
+				</div>
+			</div>
+		</div>
+	</form>	
+	<div class="row panel" ng-repeat="geek in allGeeks | filter:filter_geek:strict">
+		<div class="panel-info">
+			<div class="panel-heading">
+				<span><strong>{{geek.name}}</strong></span>
+				<span>-</span>
+				<span>{{geek.sex}}</span>
+				<span>
+					<div class="btn-toolbar pull-right" role="toolbar">
+						<div class="btn-group btn-group-sm">
+							<button type="button" class="btn btn-info" ng-click="sh = true"><span class="glyphicon glyphicon glyphicon-zoom-in"></span></button>
+							<button type="button" class="btn btn-info" ng-click="sh = false"><span class="glyphicon glyphicon glyphicon-zoom-out"></span></button>
+						</div>
+					</div>
+				</span>
+			</div>
+			<div ng-show="sh" classe="panel-body">
+				<div class="" >
+					<h4><span class="label label-success">Interets :</span></h4>
+					<span>{{geek.interests}}</span>
+				</div>
+				<div class="">
+					<h4><span class="label label-warning">Avatar :</span></h4>
+					<span>
+						<img src='http://www.gravatar.com/avatar/{{geek.avatar}}' />
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>	
+</div>
