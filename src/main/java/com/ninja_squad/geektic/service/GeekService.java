@@ -18,7 +18,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 /**
  * Geek service 
- * @author JB Nizet
+ * @author VR
  */
 @RestController
 @Transactional

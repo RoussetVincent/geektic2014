@@ -1,6 +1,5 @@
 package com.ninja_squad.geektic.dao;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
