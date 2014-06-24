@@ -6,6 +6,7 @@ create table geek (
 	name varchar(25) not null,
 	sex varchar(20) not null,
 	interests varchar(255) not null,
+	avatar varchar(255),
 	primary key (id)
 );
 

@@ -1,0 +1,5 @@
+DELETE FROM geek;
+
+INSERT INTO geek VALUES (2,'Joseph','MASCULIN','CSHARP','');
+INSERT INTO geek VALUES (3,'Nani','FEMININ','JAVA','');
+INSERT INTO geek VALUES (4,'Robert','MASCULIN','PHP','');
