@@ -1,6 +1,6 @@
 <div class="col-md-10">
 	<div class="row">
-		<div class="back-grey-1">
+		<div class="back-blue-1">
 			<h3> Liste de tous les geek : </h3>
 		</div>
 	</div>
@@ -11,7 +11,7 @@
 	</div>
 	<form>
 		<div class="row form-group">
-			<div class="col-md-4">
+			<div class="col-md-3">
 				<div class="input-group">
 					<span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
 					<input type="text" ng-model="filter_geek.name" placeholder="Nom" class="form-control" /> 
@@ -20,7 +20,12 @@
 			<div class="col-md-4">
 				<div class="input-group">
 					<span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>	
-					<input type="text" ng-model="filter_geek.sex" placeholder="Sexe" class="form-control" /> 
+					<!-- 
+					<input type="text" ng-model="filter_geek.sex" placeholder="Sexe" class="form-control" />
+					 -->
+					<select name="slc_sex" ng-model="filter_geek.sex" ng-options="item.val as item.title for item in data_lst_sex" class="form-control" required>
+						<option value="" classe="">-- Choisir le sexe --</option>
+					</select> 
 				</div>
 			</div>
 			<div class="col-md-4">

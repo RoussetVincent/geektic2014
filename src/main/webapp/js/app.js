@@ -23,6 +23,12 @@ app.config(['$routeProvider',
 /*** SearchCtrl ***/ 
 app.controller('SearchCtrl', function($scope, $http) {
 
+	$scope.btnSearchClick = function () {
+		$http.get('/api/geek/sex/' + $scope.frm_search.form.sex).success(function(geeks) {
+	    	$scope.searchGeeks = geeks;
+	    });
+	};
+	
 });
 
 /*** AllCtrl ***/ 
@@ -30,7 +36,8 @@ app.controller('AllCtrl', function($scope, $http) {
     $http.get('/api/geek').success(function(geeks) {
     	$scope.allGeeks = geeks;
     });
-    $scope.test = "test OK";
+    
+    
 });
 
 /*** HomeCtrl ***/ 
@@ -42,4 +49,13 @@ app.controller('HelloCtrl', function($scope, $http) {
     $http.get('/api/hello').success(function(helloMessage) {
     	$scope.helloMessage = helloMessage;
     });
+
+	$scope.data_lst_sex = [{
+	    val: "FEMININ",
+	    title: "Femme"
+	}, {
+	    val: "MASCULIN",
+	    title: "Homme"
+	}];
+    
 });

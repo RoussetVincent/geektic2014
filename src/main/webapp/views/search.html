@@ -1,1 +1,57 @@
-SEARCH
+<div class="row">
+	<div class="back-grey-1">
+		<h3> Recherche par sexe </h3>
+	</div>		
+</div>
+<form name="frm_search" novalidate>
+	<div class="row">
+		<div class="col-md-3 form-group" ng-class="{ 'has-error' : frm_search.slc_sex.$invalid && !frm_search.slc_sex.$pristine }" >
+			<select name="slc_sex" ng-model="frm_search.form.sex" ng-options="item.val as item.title for item in data_lst_sex" class="form-control" required>
+				<option value="" classe="">-- Choisir un sexe --</option>
+			</select>
+			<div ng-show="frm_search.slc_sex.$dirty" >
+				<p class="alert alert-danger" ng-show="frm_search.slc_sex.$error.required">Champ requis</p>
+			</div>
+		</div>			
+	</div>
+	<div class="row">
+		<div class="col-md-12 form-group">
+			<button type="button" ng-disabled="frm_search.$invalid" ng-click="btnSearchClick()" class="btn btn-success btn-lg" >Rechercher</button>
+			<button type="reset" class="btn btn-warning" >Vider</button>
+		</div>
+	</div>		
+</form>
+<div class="row">
+	<div class="back-grey-1">
+		<h3> Resultat :</h3>
+	</div>
+</div>		
+<div class="row panel" ng-repeat="geek in searchGeeks">
+	<div class="panel-info">
+		<div class="panel-heading">
+			<span><strong>{{geek.name}}</strong></span>
+			<span>-</span>
+			<span>{{geek.sex}}</span>
+			<span>
+				<div class="btn-toolbar pull-right" role="toolbar">
+					<div class="btn-group btn-group-sm">
+						<button type="button" class="btn btn-info" ng-click="sh = true"><span class="glyphicon glyphicon glyphicon-zoom-in"></span></button>
+						<button type="button" class="btn btn-info" ng-click="sh = false"><span class="glyphicon glyphicon glyphicon-zoom-out"></span></button>
+					</div>
+				</div>
+			</span>
+		</div>
+		<div ng-show="sh" classe="panel-body">
+			<div class="" >
+				<h4><span class="label label-success">Interets :</span></h4>
+				<span>{{geek.interests}}</span>
+			</div>
+			<div class="">
+				<h4><span class="label label-warning">Avatar :</span></h4>
+				<span>
+					<img src='http://www.gravatar.com/avatar/{{geek.avatar}}' />
+				</span>
+			</div>
+		</div>
+	</div>
+</div>			
