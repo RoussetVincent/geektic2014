@@ -1,6 +1,9 @@
 package com.ninja_squad.geektic.entity;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -23,6 +26,8 @@ public class Geek {
 	private Interest interests;	
 	private String avatar;
 	private Long cptview;
+	@OneToMany(mappedBy = "geek")
+	private Set<Log> log;
 
 	/* Constructor */
 	public Geek() {

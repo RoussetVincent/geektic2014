@@ -50,11 +50,16 @@ app.controller('AllCtrl', function($scope, $http) {
     
 	$scope.btnUpCptviewClick = function (geekId) {
 		$http.put('/api/geek/'+geekId+'/upCptview' ).success(function(newCptview) {
-		      for(var k in $scope.allGeeks){
-		    	  if ($scope.allGeeks[k].id == geekId) {
-		    		  $scope.allGeeks[k].cptview = newCptview;
-		    	  }
-		      }
+		    /* Maj scope cptView */  
+			for(var k in $scope.allGeeks){
+				if ($scope.allGeeks[k].id == geekId) {
+					$scope.allGeeks[k].cptview = newCptview;
+				}
+			}
+			/* Add log  */  
+		    $http.get('/api/log/add/'+geekId).success(function(geeks) {
+		    });
+  
 	    });
 	};
     

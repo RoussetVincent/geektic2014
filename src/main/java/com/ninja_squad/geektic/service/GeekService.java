@@ -42,7 +42,6 @@ public class GeekService {
     public Long upCptview(@PathVariable("id") Long id) {
         Geek g = dao.findById(id);
         dao.upCptview(g);
-        dao.persist(g);
         return g.getCptview();
     }	
 	
