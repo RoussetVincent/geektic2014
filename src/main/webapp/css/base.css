@@ -10,6 +10,10 @@
 	background: #eeeeee;
 }
 
+.back-grey-1, .back-blue-2, .back-blue-1 {
+	padding-left  : 10px;
+}
+
 .nb_view {
 	background: #000000;
 	color: #FFFFFF;

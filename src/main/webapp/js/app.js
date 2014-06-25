@@ -32,11 +32,15 @@ app.controller('SearchCtrl', function($scope, $http) {
     
 	$scope.btnUpCptviewClick = function (geekId) {
 		$http.put('/api/geek/'+geekId+'/upCptview' ).success(function(newCptview) {
-		      for(var k in $scope.searchGeeks){
+			  /* Maj scope cptView */  
+			  for(var k in $scope.searchGeeks){
 		    	  if ($scope.searchGeeks[k].id == geekId) {
 		    		  $scope.searchGeeks[k].cptview = newCptview;
 		    	  }
 		      }
+			  /* Add log  */  
+		      $http.get('/api/log/add/'+geekId).success(function(geeks) {
+		      });
 	    });
 	};
 	
