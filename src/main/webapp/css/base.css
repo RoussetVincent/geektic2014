@@ -9,3 +9,10 @@
 .back-grey-1 {
 	background: #eeeeee;
 }
+
+.nb_view {
+	background: #000000;
+	color: #FFFFFF;
+	font-size: 32px;
+ 	padding: 5px 5px 5px 5px; 
+}
