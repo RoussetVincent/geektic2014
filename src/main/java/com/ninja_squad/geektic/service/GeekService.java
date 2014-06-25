@@ -38,6 +38,14 @@ public class GeekService {
         return dao.findById(id);
     }	
 	
+	@RequestMapping(value="/{id}/upCptview", method = PUT)
+    public Long upCptview(@PathVariable("id") Long id) {
+        Geek g = dao.findById(id);
+        dao.upCptview(g);
+        dao.persist(g);
+        return g.getCptview();
+    }	
+	
 	@RequestMapping(value="/sex/{val}", method = GET)
     public List<Geek> findBySex(@PathVariable("val") Sex val) {
         return dao.findBySex(val);

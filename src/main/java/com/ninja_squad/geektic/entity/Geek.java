@@ -22,8 +22,19 @@ public class Geek {
 	@Enumerated(EnumType.STRING)
 	private Interest interests;	
 	private String avatar;
+	private Long cptview;
 
+	/* Constructor */
 	public Geek() {
+	}
+
+	/* GETTER / Setter */
+	public Long getCptview() {
+		return cptview;
+	}
+
+	public void setCptview(Long cptview) {
+		this.cptview = cptview;
 	}
 
 	public Geek(String name, Sex sex, Interest interests, String avatar ) {

@@ -29,6 +29,12 @@ app.controller('SearchCtrl', function($scope, $http) {
 	    });
 	};
 	
+	$scope.btnUpCptviewClick = function (geekId) {
+		$http.put('/api/geek/'+geekId+'/upCptview' ).success(function(newCptview) {
+			
+	    });
+	};
+	
 });
 
 /*** AllCtrl ***/ 
@@ -37,6 +43,11 @@ app.controller('AllCtrl', function($scope, $http) {
     	$scope.allGeeks = geeks;
     });
     
+	$scope.btnUpCptviewClick = function (geekId) {
+		$http.put('/api/geek/'+geekId+'/upCptview' ).success(function(newCptview) {
+
+	    });
+	};
     
 });
 
@@ -57,5 +68,5 @@ app.controller('HelloCtrl', function($scope, $http) {
 	    val: "MASCULIN",
 	    title: "Homme"
 	}];
-    
+
 });

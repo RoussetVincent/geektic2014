@@ -48,6 +48,11 @@ public class GeekDao {
 		return listeGeeks;
 	}	
 	
+	public Long upCptview(Geek geek) {
+		geek.setCptview(geek.getCptview()+1); 
+		return geek.getCptview();
+	}
+	
 	public void persist(Geek geek) {
 		em.persist(geek);
 	}	
